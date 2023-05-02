@@ -32,6 +32,11 @@ void fill_buffer(char *buffer, const char *format, va_list *_list)
 				index += 2;
 				count = fill_char(buffer, (va_arg(list, int) - '0'), count);
 			}
+			else if(format[index + 1] == 'd' || format[index + 1] == 'i')
+			{
+				index += 2;
+				count = fill_int(buffer, va_arg(list, int), count);
+			}
 			else
 			{
 
