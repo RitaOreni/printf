@@ -6,7 +6,8 @@
 /**
  * _printf - prints input.
  *
- * @format: is a character string. The format string is composed of zero or more directives.
+ * @format: is a character string. Th
+ * eformat string is composed of zero or more directives.
  * Return: number.
  */
 int _printf(const char *format, ...)

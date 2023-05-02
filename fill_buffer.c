@@ -1,15 +1,23 @@
 #include "main.h"
 #include <stdarg.h>
 
+
+/**
+ * fill_buffer - fills buffer.
+ * @buffer: buffer to fill.
+ * @format: format needed.
+ * @_list: our list.
+ * Return: Nothing.
+ */
+
 void fill_buffer(char *buffer, const char *format, va_list *_list)
 {
-    int count, index;
-    va_list list;
-    count = 0;
+	int count, index;
+	va_list list;
+
+	count = 0;
 	index = 0;
-
-    va_copy(list, *_list);
-
+	va_copy(list, *_list);
 	while (format[index] != '\0')
 	{
 		if (format[index] == '%')
@@ -26,6 +34,7 @@ void fill_buffer(char *buffer, const char *format, va_list *_list)
 			}
 			else
 			{
+
 				buffer[count] = format[index];
 				count++;
 				index++;

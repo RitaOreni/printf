@@ -2,13 +2,20 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/**
+ * buffer_length - gets the length of buffer.
+ * @format:  format.
+ * @_list: passed list.
+ * Return: length.
+ */
+
 
 int buffer_length(const char *format, va_list *_list)
 {
 	int index, count, len;
 	va_list list;
+
 	va_copy(list, *_list);
-	
 	index = 0;
 	count = 0;
 	len = 0;
