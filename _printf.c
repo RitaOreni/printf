@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _printf - prints input.

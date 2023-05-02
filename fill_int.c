@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void reverse_str(char *str, int len);
 int int_length(int num);
@@ -44,12 +43,13 @@ int fill_int(char *buffer, int number, int index)
 		str[count] = '-';
 
 	reverse_str(str, str_space);
-
 	for (i = 0; i < str_space; i++)
 	{
 		buffer[index] = str[i];
 		index++;
 	}
+
+	free(str);
 
 	return (index);
 }
@@ -72,7 +72,6 @@ int int_length(int num)
 		num_digits++;
 	}
 	return (num_digits);
-
 }
 
 /**
@@ -99,6 +98,8 @@ void reverse_str(char *str, int len)
 	{
 		str[i] = temp[i];
 	}
+
+	free(temp);
 }
 
 
