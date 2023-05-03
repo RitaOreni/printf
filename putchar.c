@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include "main.h"
 
 /**
  * our_putchar - prints on terminal.
@@ -10,5 +11,10 @@
 
 void our_putchar(char *c, int n)
 {
-	write(1, c, n);
+	int len;
+
+	len = _strlen(c);
+
+	if (len < 1024)
+		write(1, c, n);
 }
