@@ -53,6 +53,7 @@ int len_bin(int value)
 	return (len);
 }
 
+
 /**
  * to_bin - converts decimal to binary;
  *

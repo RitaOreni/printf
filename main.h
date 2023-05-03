@@ -19,4 +19,14 @@ int fill_reverse_str(char *buffer, char *str, int index);
 int len_bin(int value);
 char *to_bin(int value);
 int fill_binary(char *buffer, int value, int index);
+int ui_length(unsigned int num);
+int fill_ui(char *buffer, unsigned int number, int index);
+int fill_hex(char *buffer, unsigned int value, int index);
+int len_hex(unsigned int value);
+char *to_hex(unsigned int value);
+int len_octal(unsigned int value);
+int fill_octal(char *buffer, unsigned int value, int index);
+char *to_octal(unsigned int value);
+
+
 #endif

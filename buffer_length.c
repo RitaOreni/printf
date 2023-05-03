@@ -34,7 +34,7 @@ int buffer_length(const char *format, va_list *_list)
 				len += 1;
 				index += 2;
 			}
-			else if(format[index + 1] == 'd' || format[index + 1] == 'i')
+			else if	(format[index + 1] == 'd' || format[index + 1] == 'i')
 			{
 				len += int_length(va_arg(list, int));
 				index += 2;
@@ -54,6 +54,27 @@ int buffer_length(const char *format, va_list *_list)
 				len += len_bin(va_arg(list, int));
 				index += 2;
 			}
+			else if (format[index + 1] == 'u')
+			{
+				len += ui_length(va_arg(list, unsigned int));
+				index += 2;
+			}
+			else if (format[index + 1] == 'x' || format[index + 1] == 'X')
+			{
+				len += len_hex(va_arg(list, unsigned int));
+				index += 2;
+			}
+			else if (format[index + 1] == 'o')
+			{
+				len += len_octal(va_arg(list, unsigned int));
+				index += 2;
+			}
+			else if	(format[index + 1] == '%')
+			{
+				len += 1;
+				index += 2;
+
+			}
 			else
 			{
 				count++;
@@ -66,7 +87,6 @@ int buffer_length(const char *format, va_list *_list)
 			index++;
 		}
 	}
-
 	va_end(list);
 	return (count + len);
 }
