@@ -16,6 +16,7 @@ void our_putchar(char *c, int n)
 
 	len = _strlen(c);
 
+
 	if (len <= 1024)
 		write(1, c, n);
 }
