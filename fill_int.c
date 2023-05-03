@@ -1,8 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-void reverse_str(char *str, int len);
-int int_length(int num);
 /**
  * fill_int - converts integer to string and fills
  * the strings onto buffer memory passed.
@@ -26,9 +24,8 @@ int fill_int(char *buffer, int number, int index)
 	if (number < 0)
 		is_negative = 1;
 
-	str_space = int_length(number) + is_negative;
+	str_space = int_length(number);
 	str = malloc(sizeof(str) * str_space);
-
 	number = number > 0 ? number : number * -1;
 
 	while (number)
@@ -63,7 +60,11 @@ int fill_int(char *buffer, int number, int index)
 
 int int_length(int num)
 {
-	int num_digits;
+	int num_digits, is_negative;
+
+	is_negative = 0;
+	if (num < 0)
+		is_negative = 1;
 
 	num_digits = 0;
 	while (num)
@@ -71,7 +72,7 @@ int int_length(int num)
 		num /= 10;
 		num_digits++;
 	}
-	return (num_digits);
+	return (num_digits + is_negative);
 }
 
 /**

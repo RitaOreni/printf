@@ -13,5 +13,7 @@ int int_length(int num);
 void reverse_str(char *str, int len);
 int int_length(int num);
 int fill_int(char *buffer, int number, int index);
-
+int fill_pointer(char *buffer, void *ptr, int index);
+int fill_ROT13(char *buffer, char *str , int index);
+void _rot13(char *str);
 #endif

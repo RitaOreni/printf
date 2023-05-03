@@ -34,9 +34,14 @@ int buffer_length(const char *format, va_list *_list)
 				len += 1;
 				index += 2;
 			}
-			else if(format[index + 1] == 'd')
+			else if(format[index + 1] == 'd' || format[index + 1] == 'i')
 			{
 				len += int_length(va_arg(list, int));
+				index += 2;
+			}
+			else if (format[index + 1] == '%')
+			{
+				len += 1;
 				index += 2;
 			}
 			else
