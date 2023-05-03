@@ -16,4 +16,5 @@ int fill_int(char *buffer, int number, int index);
 int fill_pointer(char *buffer, void *ptr, int index);
 int fill_ROT13(char *buffer, char *str , int index);
 void _rot13(char *str);
+int fill_reverse_str(char *buffer, char *str, int index);
 #endif

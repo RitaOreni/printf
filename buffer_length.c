@@ -44,6 +44,11 @@ int buffer_length(const char *format, va_list *_list)
 				len += 1;
 				index += 2;
 			}
+			else if (format[index + 1] == 'r')
+			{
+				len += _strlen(va_arg(list, char *));
+				index += 2;
+			}
 			else
 			{
 				count++;

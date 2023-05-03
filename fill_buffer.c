@@ -42,6 +42,11 @@ void fill_buffer(char *buffer, const char *format, va_list *_list)
 				index += 2;
 				count = fill_ROT13(buffer, va_arg(list, char *), count);
 			}
+			else if (format[index + 1] == 'r')
+			{
+				index += 2;
+				count = fill_reverse_str(buffer, va_arg(list, char *), count);
+			}
 			else
 			{
 
